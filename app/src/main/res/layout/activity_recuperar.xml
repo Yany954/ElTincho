@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:gravity="center"
-    android:background="@color/primaryTextColor"
+    android:background="@color/secondaryTextColor"
 
     tools:context=".Views.Ui.Activities.MainActivity">
 
@@ -36,6 +36,7 @@
         android:fontFamily="@font/opensanslight"
         android:padding="10dp"
         android:layout_marginTop="10dp"
+        android:inputType="textEmailAddress"
         />
     <EditText
         android:layout_width="358dp"
@@ -46,6 +47,7 @@
         android:fontFamily="@font/opensanslight"
         android:padding="10dp"
         android:layout_marginTop="10dp"
+        android:inputType="textPassword"
         />
 
 
@@ -54,9 +56,8 @@
         android:layout_width="142dp"
         android:layout_height="59dp"
         android:layout_marginTop="10dp"
-        android:text="Recuperar"
-        android:textSize="18dp"
-        android:textColor="@color/primaryTextColor"
         android:background="@drawable/stylo_borde_boton"
-        />
+        android:text="Recuperar"
+        android:textColor="#4E342E"
+        android:textSize="18dp" />
 </LinearLayout>
