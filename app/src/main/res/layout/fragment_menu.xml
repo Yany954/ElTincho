@@ -13,7 +13,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/ic_launcher_background">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -23,30 +24,19 @@
             android:layout_marginLeft="20dp"
             android:background="@drawable/theme_gradients_background">
             <ImageView
-                android:layout_width="110dp"
+                android:layout_width="match_parent"
                 android:layout_height="110dp"
-                android:layout_alignParentRight="true"
+                android:foregroundGravity="center"
                 app:srcCompat="@mipmap/ic_banner_foreground_tincho"
-                android:layout_marginRight="30dp">
+                >
 
             </ImageView>
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="115dp"
-                android:gravity="center"
-                android:text="Bienvenid@!"
-                android:textColor="@color/naranja"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="9dp"
-                android:layout_marginEnd="81dp"></TextView>
+
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="600dp"
                 android:layout_marginTop="110dp"
-                android:background="@color/primaryTextColor"
+                android:background="@drawable/ic_launcher_background"
                 >
                 <GridLayout
                     android:layout_width="match_parent"
@@ -74,7 +64,7 @@
                             <ImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@drawable/icon_platillos">
+                                android:src="@mipmap/platillos_menu">
 
                             </ImageView>
                             <TextView
@@ -107,7 +97,7 @@
                             <ImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@drawable/icon_shop">
+                                android:src="@mipmap/pedidos_menu">
 
                             </ImageView>
                             <TextView
@@ -140,7 +130,7 @@
                             <ImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@drawable/icon_account">
+                                android:src="@mipmap/perfil_menu">
 
                             </ImageView>
                             <TextView
@@ -173,7 +163,7 @@
                             <ImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@drawable/icon_fav">
+                                android:src="@mipmap/favorito_menu">
 
                             </ImageView>
                             <TextView
@@ -206,7 +196,7 @@
                             <ImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@drawable/icon_contacto">
+                                android:src="@mipmap/ruta_menu">
 
                             </ImageView>
                             <TextView
@@ -239,7 +229,7 @@
                             <ImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@drawable/icon_help">
+                                android:src="@mipmap/ayuda_menu">
 
                             </ImageView>
                             <TextView

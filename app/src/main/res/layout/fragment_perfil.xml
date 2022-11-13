@@ -9,35 +9,191 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <RelativeLayout
+        android:orientation="vertical"
+        android:background="@color/el_tincho_sinfondo_background">
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/theme_gradients_background">
+            android:background="@color/fondo_tincho_background"
+            android:id="@+id/actionbartoolbar"
+            app:menu="@menu/menu_navigation_bar"
+            tools:ignore="MissingConstraints">
             <ImageView
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_alignParentRight="true"
-                app:srcCompat="@mipmap/ic_banner_foreground_tincho"
-                android:layout_marginRight="30dp">
-
-            </ImageView>
+                android:id="@+id/fotoperfil"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                app:tint="@color/secondaryDarkColor"
+                android:src="@drawable/icon_account"/>
             <TextView
-                android:layout_width="200dp"
-                android:layout_height="115dp"
-                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="Perfil"
-                android:textColor="@color/secondaryColor"
-                android:textSize="30sp"
                 android:textStyle="bold"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="9dp"
-                android:layout_marginEnd="81dp"></TextView>
-        </RelativeLayout>
+                android:textSize="20dp"
+                android:layout_margin="10dp"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+            <ImageView
+                android:id="@+id/fotoperfilgeneral"
+                android:layout_width="213dp"
+                android:layout_height="204dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                android:src="@mipmap/perfil_menu"/>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/btncamara"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/secondaryColor"
+                    android:src="@drawable/icon_camera" />
+
+                <ImageButton
+                    android:id="@+id/btngaleria"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="255dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/secondaryColor"
+                    android:src="@drawable/icon_galeria" />
+            </RelativeLayout>
+             <ScrollView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="348dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="30dp"
+
+                android:background="@drawable/style_fondo">
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Nombre Completo"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/secondaryDarkColor"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/nombrecompleto"
+                        android:layout_width="246dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/stylo_borde_editext"
+                        android:text="Pablo Marmol"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:fontFamily="sans-serif-light"
+                        android:textIsSelectable="false" />
+
+                    <ImageButton
+                        android:id="@+id/nombreedit"
+                        android:layout_width="47dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="275dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/icon_edit"
+                        android:background="@drawable/stylo_borde_boton"/>
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Email"
+                    android:textColor="@color/secondaryDarkColor"
+                    android:textSize="23dp"
+                    android:textStyle="bold"/>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/correoelectronico"
+                        android:layout_width="246dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/stylo_borde_editext"
+                        android:text="pablomarmol@gmail.com"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="sans-serif-light"
+                        android:textIsSelectable="false" />
+
+                    <ImageButton
+                        android:id="@+id/correoedit"
+                        android:layout_width="47dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="275dp"
+                        android:layout_marginTop="9dp"
+                        android:src="@drawable/icon_edit"
+                        android:background="@drawable/stylo_borde_boton"/>
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Celular"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/secondaryDarkColor"
+                    android:textSize="23dp"
+                    android:textStyle="bold"/>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/celularcompleto"
+                        android:layout_width="246dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/stylo_borde_editext"
+                        android:text="+57 317 4750 12 34"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:fontFamily="sans-serif-light"
+                        android:textIsSelectable="false" />
+
+                    <ImageButton
+                        android:id="@+id/celularedit"
+                        android:layout_width="47dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="275dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/icon_edit"
+                        android:background="@drawable/stylo_borde_boton"/>
+                </RelativeLayout>
+
+        </LinearLayout>
+        </ScrollView>
+
+
+
     </LinearLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/buttonNavigationMenu"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="675dp"
+        android:background="@color/fondo_tincho_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/menu_navigation_bar"
+        tools:ignore="MissingConstraints">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 </FrameLayout>

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:gravity="center"
-    android:background="@color/secondaryTextColor"
+    android:background="@mipmap/fondo_tincho3"
 
     tools:context=".Views.Ui.Activities.MainActivity">
 
@@ -15,58 +15,71 @@
         android:layout_width="276dp"
         android:layout_height="150dp"
         android:scaleType="fitXY"
+        android:layout_marginRight="20dp"
         app:srcCompat="@mipmap/ic_banner_foreground_tincho" />
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Iniciá Sesión"
-        android:textColor="@color/secondaryColor"
-        android:textSize="30dp" />
-    <TextView
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:fontFamily="sans-serif-black"
-        android:textSize="20dp"
-        android:text="Email"
-        android:layout_gravity="left"
-        android:textColor="@color/secondaryColor"/>
+        android:orientation="vertical"
+        android:background="@drawable/style_fondo">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Iniciá Sesión"
+            android:layout_gravity="center"
+            android:textColor="@color/secondaryColor"
+            android:textSize="30dp" />
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif-black"
+            android:textSize="20dp"
+            android:text="Email"
+            android:layout_gravity="left"
+            android:textColor="@color/secondaryColor"/>
 
-    <EditText
-        android:layout_width="358dp"
-        android:layout_height="50dp"
-        android:textSize="20dp"
-        android:background="@drawable/stylo_borde_editext"
-        android:hint="usuario@ejemplo.com"
-        android:padding="10dp"
-        />
-    <TextView
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Contraseña"
-        android:layout_gravity="left"
-        android:textColor="@color/secondaryColor"/>
+        <EditText
+            android:id="@+id/loginEmail"
+            android:layout_width="348dp"
+            android:layout_height="50dp"
+            android:background="@drawable/stylo_borde_editext"
+            android:fontFamily="@font/opensanslight"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:text="usuario@ejemplo.com"
+            android:textSize="20dp" />
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Contraseña"
+            android:layout_gravity="left"
+            android:textColor="@color/secondaryColor"/>
 
-    <EditText
-        android:layout_width="358dp"
-        android:layout_height="50dp"
-        android:textSize="20dp"
-        android:text="contraseña12345"
-        android:background="@drawable/stylo_borde_editext"
-        android:padding="10dp"
-        android:password="true" />
+        <EditText
+            android:id="@+id/loginPassword"
+            android:layout_width="348dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="20dp"
+            android:text="contraseña12345"
+            android:fontFamily="@font/opensanslight"
+            android:background="@drawable/stylo_borde_editext"
+            android:padding="10dp"
+            android:inputType="textPassword" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/BotonInicio"
         android:layout_width="142dp"
         android:layout_height="59dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/stylo_borde_boton"
         android:text="Entrar"
         android:textColor="#000000"
@@ -87,20 +100,20 @@
             android:layout_gravity="left"
             android:layout_margin="10dp"
             android:fontFamily="sans-serif-black"
-            android:text="Se olvidó la constraseña?"
+            android:text=" Recuperar constraseña"
             android:textColor="@color/secondaryColor"
-            android:textSize="16dp" />
+            android:textSize="20dp"/>
 
         <TextView
             android:id="@+id/BotonRegistro"
             android:layout_width="151dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_margin="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-black"
             android:paddingLeft="40dp"
             android:text="Registráte"
             android:textColor="@color/secondaryColor"
-            android:textSize="16dp" />
+            android:textSize="20dp" />
     </LinearLayout>
 </LinearLayout>

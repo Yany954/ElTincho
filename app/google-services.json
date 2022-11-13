@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "617926650086",
+    "project_id": "el-tincho-db",
+    "storage_bucket": "el-tincho-db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:617926650086:android:7547f11900678b45c87327",
+        "android_client_info": {
+          "package_name": "com.example.eltincho"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "617926650086-i9jup69kcgeelqosc9g7u8rdvhvqhfit.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByjR11F-ApuMV4bAP4z7Y2_bhkQ5zoBT4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "617926650086-i9jup69kcgeelqosc9g7u8rdvhvqhfit.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

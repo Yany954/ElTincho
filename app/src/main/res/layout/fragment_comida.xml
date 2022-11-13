@@ -5,14 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Views.Ui.Fragments.comidaFragment"
-    android:background="@color/primaryTextColor">
+    android:background="@color/el_tincho_sinfondo_background">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/fondo_tincho_background"
+            android:id="@+id/actionbartoolbar"
+            app:menu="@menu/menu_navigation_bar"
+            tools:ignore="MissingConstraints">
+            <ImageView
+                android:id="@+id/fotoperfil"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                app:tint="@color/secondaryDarkColor"
+                android:src="@drawable/icon_account"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Platillos"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_margin="10dp"/>
 
+        </androidx.appcompat.widget.Toolbar>
         <RelativeLayout
+            android:id="@+id/encabezado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -23,23 +47,47 @@
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:layout_alignParentRight="true"
-                app:srcCompat="@mipmap/ic_banner_foreground_tincho"
+                app:srcCompat="@mipmap/platillos_menu"
                 android:layout_marginRight="30dp">
 
             </ImageView>
+
             <TextView
                 android:layout_width="200dp"
                 android:layout_height="115dp"
                 android:gravity="center"
                 android:text="Platillos"
-                android:textColor="@color/secondaryColor"
+                android:textColor="@color/secondaryDarkColor"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="9dp"
-                android:layout_marginEnd="81dp"></TextView>
+                android:layout_marginEnd="81dp" />
         </RelativeLayout>
-    </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_entrada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/encabezado">
 
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/buttonNavigationMenu"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="675dp"
+        android:background="@color/fondo_tincho_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/menu_navigation_bar"
+        tools:ignore="MissingConstraints">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 </FrameLayout>

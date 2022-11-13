@@ -3,8 +3,170 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_grahn"
-    app:startDestination="@id/menuFragment">
+    app:startDestination="@id/perfilFragment">
 
+    <fragment
+        android:id="@+id/favoritosFragment"
+        android:name="com.example.eltincho.Views.Ui.Fragments.favoritosFragment"
+        android:label="fragment_favoritos"
+        tools:layout="@layout/fragment_favoritos" >
+        <action
+            android:id="@+id/action_favoritosFragment_to_comidaFragment"
+            app:destination="@id/comidaFragment" />
+        <action
+            android:id="@+id/action_favoritosFragment_to_pedidosFragment"
+            app:destination="@id/pedidosFragment" />
+        <action
+            android:id="@+id/action_favoritosFragment_to_rutaFragment"
+            app:destination="@id/rutaFragment" />
+        <action
+            android:id="@+id/action_favoritosFragment_to_ayudaFragment"
+            app:destination="@id/ayudaFragment" />
+        <action
+            android:id="@+id/action_favoritosFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_favoritosFragment_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
+        <action
+            android:id="@+id/action_favoritosFragment_to_activity_login"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/rutaFragment"
+        android:name="com.example.eltincho.Views.Ui.Fragments.rutaFragment"
+        android:label="fragment_ruta"
+        tools:layout="@layout/fragment_ruta" >
+        <action
+            android:id="@+id/action_rutaFragment_to_comidaFragment"
+            app:destination="@id/comidaFragment" />
+        <action
+            android:id="@+id/action_rutaFragment_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
+        <action
+            android:id="@+id/action_rutaFragment_to_favoritosFragment"
+            app:destination="@id/favoritosFragment" />
+        <action
+            android:id="@+id/action_rutaFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_rutaFragment_to_ayudaFragment"
+            app:destination="@id/ayudaFragment" />
+        <action
+            android:id="@+id/action_rutaFragment_to_pedidosFragment"
+            app:destination="@id/pedidosFragment" />
+        <action
+            android:id="@+id/action_rutaFragment_to_activity_login"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/pedidosFragment"
+        android:name="com.example.eltincho.Views.Ui.Fragments.pedidosFragment"
+        android:label="fragment_pedidos"
+        tools:layout="@layout/fragment_pedidos" >
+        <action
+            android:id="@+id/action_pedidosFragment_to_ayudaFragment"
+            app:destination="@id/ayudaFragment" />
+        <action
+            android:id="@+id/action_pedidosFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_pedidosFragment_to_favoritosFragment"
+            app:destination="@id/favoritosFragment" />
+        <action
+            android:id="@+id/action_pedidosFragment_to_rutaFragment"
+            app:destination="@id/rutaFragment" />
+        <action
+            android:id="@+id/action_pedidosFragment_to_comidaFragment"
+            app:destination="@id/comidaFragment" />
+        <action
+            android:id="@+id/action_pedidosFragment_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
+        <action
+            android:id="@+id/action_pedidosFragment_to_activity_login"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.example.eltincho.Views.Ui.Fragments.perfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" >
+        <action
+            android:id="@+id/action_perfilFragment_to_comidaFragment"
+            app:destination="@id/comidaFragment" />
+        <action
+            android:id="@+id/action_perfilFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_perfilFragment_to_rutaFragment"
+            app:destination="@id/rutaFragment" />
+        <action
+            android:id="@+id/action_perfilFragment_to_favoritosFragment"
+            app:destination="@id/favoritosFragment" />
+        <action
+            android:id="@+id/action_perfilFragment_to_ayudaFragment"
+            app:destination="@id/ayudaFragment" />
+        <action
+            android:id="@+id/action_perfilFragment_to_pedidosFragment"
+            app:destination="@id/pedidosFragment" />
+        <action
+            android:id="@+id/action_perfilFragment_to_activity_login"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/ayudaFragment"
+        android:name="com.example.eltincho.Views.Ui.Fragments.ayudaFragment"
+        android:label="fragment_ayuda"
+        tools:layout="@layout/fragment_ayuda" >
+        <action
+            android:id="@+id/action_ayudaFragment_to_pedidosFragment"
+            app:destination="@id/pedidosFragment" />
+        <action
+            android:id="@+id/action_ayudaFragment_to_comidaFragment"
+            app:destination="@id/comidaFragment" />
+        <action
+            android:id="@+id/action_ayudaFragment_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
+        <action
+            android:id="@+id/action_ayudaFragment_to_rutaFragment"
+            app:destination="@id/rutaFragment" />
+        <action
+            android:id="@+id/action_ayudaFragment_to_favoritosFragment"
+            app:destination="@id/favoritosFragment" />
+        <action
+            android:id="@+id/action_ayudaFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_ayudaFragment_to_activity_login"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/comidaFragment"
+        android:name="com.example.eltincho.Views.Ui.Fragments.comidaFragment"
+        android:label="fragment_comida"
+        tools:layout="@layout/fragment_comida" >
+        <action
+            android:id="@+id/action_comidaFragment_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
+        <action
+            android:id="@+id/action_comidaFragment_to_rutaFragment"
+            app:destination="@id/rutaFragment" />
+        <action
+            android:id="@+id/action_comidaFragment_to_favoritosFragment"
+            app:destination="@id/favoritosFragment" />
+        <action
+            android:id="@+id/action_comidaFragment_to_ayudaFragment"
+            app:destination="@id/ayudaFragment" />
+        <action
+            android:id="@+id/action_comidaFragment_to_pedidosFragment"
+            app:destination="@id/pedidosFragment" />
+        <action
+            android:id="@+id/action_comidaFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_comidaFragment_to_activity_login"
+            app:destination="@id/mainActivity" />
+    </fragment>
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.example.eltincho.Views.Ui.Fragments.menuFragment"
@@ -14,49 +176,25 @@
             android:id="@+id/action_menuFragment_to_comidaFragment"
             app:destination="@id/comidaFragment" />
         <action
-            android:id="@+id/action_menuFragment_to_comprasFragment"
-            app:destination="@id/comprasFragment" />
-        <action
             android:id="@+id/action_menuFragment_to_perfilFragment"
             app:destination="@id/perfilFragment" />
-        <action
-            android:id="@+id/action_menuFragment_to_favoritosFragment"
-            app:destination="@id/favoritosFragment" />
         <action
             android:id="@+id/action_menuFragment_to_rutaFragment"
             app:destination="@id/rutaFragment" />
         <action
+            android:id="@+id/action_menuFragment_to_favoritosFragment"
+            app:destination="@id/favoritosFragment" />
+        <action
             android:id="@+id/action_menuFragment_to_ayudaFragment"
             app:destination="@id/ayudaFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_pedidosFragment"
+            app:destination="@id/pedidosFragment" />
+
     </fragment>
-    <fragment
-        android:id="@+id/comidaFragment"
-        android:name="com.example.eltincho.Views.Ui.Fragments.comidaFragment"
-        android:label="fragment_comida"
-        tools:layout="@layout/fragment_comida" />
-    <fragment
-        android:id="@+id/comprasFragment"
-        android:name="com.example.eltincho.Views.Ui.Fragments.comprasFragment"
-        android:label="fragment_compras"
-        tools:layout="@layout/fragment_compras" />
-    <fragment
-        android:id="@+id/perfilFragment"
-        android:name="com.example.eltincho.Views.Ui.Fragments.perfilFragment"
-        android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" />
-    <fragment
-        android:id="@+id/favoritosFragment"
-        android:name="com.example.eltincho.Views.Ui.Fragments.favoritosFragment"
-        android:label="fragment_favoritos"
-        tools:layout="@layout/fragment_favoritos" />
-    <fragment
-        android:id="@+id/rutaFragment"
-        android:name="com.example.eltincho.Views.Ui.Fragments.rutaFragment"
-        android:label="fragment_ruta"
-        tools:layout="@layout/fragment_ruta" />
-    <fragment
-        android:id="@+id/ayudaFragment"
-        android:name="com.example.eltincho.Views.Ui.Fragments.ayudaFragment"
-        android:label="fragment_ayuda"
-        tools:layout="@layout/fragment_ayuda" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.eltincho.Views.Ui.Activities.MainActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
 </navigation>

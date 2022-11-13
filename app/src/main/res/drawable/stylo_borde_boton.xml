@@ -16,4 +16,9 @@
         android:radius="20dp">
 
     </corners>
+    <stroke
+        android:width="2dp"
+        android:color="@color/fondo_tincho_background">
+
+    </stroke>
 </shape>

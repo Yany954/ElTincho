@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/ic_banner_tincho_background">
+
+    <item
+        android:id="@+id/platillos"
+        android:title="Comida"
+        android:icon="@drawable/icon_platillos"
+        android:color="@color/secondaryDarkColor"
+        />
 
 
+    <item
+        android:id="@+id/perfil"
+        android:title="Perfil"
+        android:icon="@drawable/icon_account"
+        android:color="@color/secondaryDarkColor"
+        />
+    <item
+        android:id="@+id/home"
+        android:title="Menu"
+        android:icon="@drawable/home_icon"
+        android:color="@color/secondaryDarkColor"
+        />
+    <item
+        android:id="@+id/favoritos"
+        android:title="Favoritos"
+        android:icon="@drawable/icon_fav"
+        android:color="@color/secondaryDarkColor"
+        />
+    <item
+        android:id="@+id/contactanos"
+        android:title="Contactenos"
+        android:icon="@drawable/icon_contacto"
+        android:color="@color/secondaryDarkColor"
+        />
 
-
-</RelativeLayout>
+</menu>
