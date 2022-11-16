@@ -1,4 +1,4 @@
-package com.example.eltincho.Views.Ui.Fragments
+package com.example.eltincho.views.ui.Fragments
 
 import android.os.Bundle
 import android.view.*
@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
+@Suppress("DEPRECATION")
 class rutaFragment : Fragment() {
     lateinit var firebaseAuth: FirebaseAuth
     override fun onCreateView(
@@ -20,7 +21,6 @@ class rutaFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ruta, container, false)
     }
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_navigation_toolbar, menu)
         super.onCreateOptionsMenu(menu, inflater)
@@ -38,7 +38,7 @@ class rutaFragment : Fragment() {
             }
             R.id.cerrar->{
                 firebaseAuth.signOut()
-                findNavController().navigate(R.id.action_rutaFragment_to_activity_login)
+                findNavController().navigate(R.id.action_rutaFragment_to_loginActivity)
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -60,6 +60,6 @@ class rutaFragment : Fragment() {
                 R.id.favoritos->findNavController().navigate(R.id.action_rutaFragment_to_favoritosFragment)
             }
         }
-        (activity as AppCompatActivity).setSupportActionBar(view?.findViewById(R.id.actionbartoolbar))
+        //(activity as AppCompatActivity).setSupportActionBar(view?.findViewById(R.id.actionbartoolbar))
     }
 }

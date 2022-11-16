@@ -1,4 +1,4 @@
-package com.example.eltincho.Views.Ui.Fragments
+package com.example.eltincho.views.ui.Fragments
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -8,13 +8,17 @@ import android.view.*
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.eltincho.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
+@Suppress("DEPRECATION")
 class perfilFragment : Fragment() {
     lateinit var firebaseAuth:FirebaseAuth
     override fun onCreateView(
@@ -72,7 +76,7 @@ class perfilFragment : Fragment() {
             }
             R.id.cerrar->{
                 firebaseAuth.signOut()
-                findNavController().navigate(R.id.action_rutaFragment_to_activity_login)
+                findNavController().navigate(R.id.action_rutaFragment_to_loginActivity)
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -81,6 +85,7 @@ class perfilFragment : Fragment() {
     override  fun onCreate (savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
+        firebaseAuth= Firebase.auth
     }
     override fun onViewCreated(view:View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
@@ -93,6 +98,7 @@ class perfilFragment : Fragment() {
                 R.id.favoritos->findNavController().navigate(R.id.action_perfilFragment_to_favoritosFragment)
             }
         }
+        //(activity as AppCompatActivity).setSupportActionBar(view?.findViewById(R.id.actionbartoolbar))
         val btmcamara=view.findViewById<ImageButton>(R.id.btncamara)
         btmcamara.setOnClickListener{
             val intent=Intent(MediaStore.ACTION_IMAGE_CAPTURE)
@@ -108,11 +114,14 @@ class perfilFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode:Int, data: Intent?){
         super.onActivityResult(requestCode, resultCode, data)
         val imageView=view?.findViewById<ImageView>(R.id.fotoperfil)
+        val imageView2=view?.findViewById<ImageView>(R.id.fotoperfilgeneral)
         if(requestCode==123){
             var bitmap=data?.extras?.get("data") as Bitmap
             imageView?.setImageBitmap(bitmap)
+            imageView2?.setImageBitmap(bitmap)
         } else if (requestCode==456){
             imageView?.setImageURI(data?.data)
+            imageView2?.setImageURI(data?.data)
         }
     }
 

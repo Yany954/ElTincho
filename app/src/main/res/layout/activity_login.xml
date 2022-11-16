@@ -7,9 +7,9 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:gravity="center"
-    android:background="@mipmap/fondo_tincho3"
+    android:background="@color/el_tincho_sinfondo_background"
 
-    tools:context=".Views.Ui.Activities.MainActivity">
+    tools:context=".views.ui.activities.MainActivity">
 
     <ImageView
         android:layout_width="276dp"
@@ -44,13 +44,13 @@
 
         <EditText
             android:id="@+id/loginEmail"
-            android:layout_width="348dp"
+            android:layout_width="328dp"
             android:layout_height="50dp"
             android:background="@drawable/stylo_borde_editext"
             android:fontFamily="@font/opensanslight"
             android:inputType="textEmailAddress"
             android:padding="10dp"
-            android:text="usuario@ejemplo.com"
+            android:hint="usuario@ejemplo.com"
             android:textSize="20dp" />
         <TextView
             android:layout_width="120dp"
@@ -64,11 +64,11 @@
 
         <EditText
             android:id="@+id/loginPassword"
-            android:layout_width="348dp"
+            android:layout_width="328dp"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
             android:textSize="20dp"
-            android:text="contraseña12345"
+            android:hint="Contraseña"
             android:fontFamily="@font/opensanslight"
             android:background="@drawable/stylo_borde_editext"
             android:padding="10dp"
@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="10dp"
-        tools:context=".Views.Ui.Activities.MainActivity">
+        tools:context=".views.ui.activities.MainActivity">
 
 
         <TextView
@@ -105,7 +105,7 @@
             android:textSize="20dp"/>
 
         <TextView
-            android:id="@+id/BotonRegistro"
+            android:id="@+id/BotonRegistroLogin"
             android:layout_width="151dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"

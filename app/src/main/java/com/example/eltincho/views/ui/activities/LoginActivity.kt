@@ -1,4 +1,4 @@
-package com.example.eltincho.Views.Ui.Activities
+package com.example.eltincho.views.ui.activities
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -10,13 +10,13 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.eltincho.R
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuth.AuthStateListener
+//import com.google.firebase.auth.FirebaseAuth.AuthStateListener
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var authStateListener: AuthStateListener
+    //private lateinit var authStateListener: AuthStateListener
     @SuppressLint("MissingInflateId")
     lateinit var registrobutton:TextView
     lateinit var iniciobutton:Button
@@ -26,9 +26,18 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         val email:EditText=findViewById(R.id.loginEmail)
         val password=findViewById<EditText>(R.id.loginPassword)
+        iniciobutton=findViewById(R.id.BotonInicio)
+        recuperarbutton=findViewById(R.id.BotonRecuperar)
+        registrobutton=findViewById(R.id.BotonRegistroLogin)
         firebaseAuth=Firebase.auth
         iniciobutton.setOnClickListener{
             login(email.text.toString(),password.text.toString())
+        }
+        recuperarbutton.setOnClickListener{
+            startActivity(Intent(this,RecuperarActivity::class.java))
+        }
+        registrobutton.setOnClickListener{
+            startActivity(Intent(this,RegistroActivity::class.java ))
         }
 
     }

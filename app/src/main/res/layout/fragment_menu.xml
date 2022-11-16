@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Views.Ui.Fragments.menuFragment"
+    tools:context=".views.ui.Fragments.menuFragment"
     android:background="@color/primaryTextColor">
 
     <!-- TODO: Update blank fragment layout -->
@@ -53,8 +53,7 @@
                         android:layout_rowWeight="1"
                         app:cardElevation="5dp"
                         app:cardCornerRadius="5dp"
-                        android:layout_margin="10dp"
-                        android:id="@+id/cardPlatillos">
+                        android:layout_margin="10dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -64,7 +63,8 @@
                             <ImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@mipmap/platillos_menu">
+                                android:src="@mipmap/platillos_menu"
+                                android:id="@+id/cardPlatillos">
 
                             </ImageView>
                             <TextView
@@ -86,8 +86,7 @@
                         android:layout_rowWeight="1"
                         app:cardElevation="5dp"
                         app:cardCornerRadius="5dp"
-                        android:layout_margin="10dp"
-                        android:id="@+id/cardPedido">
+                        android:layout_margin="10dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -97,7 +96,8 @@
                             <ImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@mipmap/pedidos_menu">
+                                android:src="@mipmap/pedidos_menu"
+                                android:id="@+id/cardPedido">
 
                             </ImageView>
                             <TextView
@@ -119,8 +119,7 @@
                         android:layout_rowWeight="1"
                         app:cardElevation="5dp"
                         app:cardCornerRadius="5dp"
-                        android:layout_margin="10dp"
-                        android:id="@+id/cardMiCuenta">
+                        android:layout_margin="10dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -130,7 +129,8 @@
                             <ImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@mipmap/perfil_menu">
+                                android:src="@mipmap/perfil_menu"
+                                android:id="@+id/cardMiCuenta">
 
                             </ImageView>
                             <TextView
@@ -152,8 +152,7 @@
                         android:layout_rowWeight="1"
                         app:cardElevation="5dp"
                         app:cardCornerRadius="5dp"
-                        android:layout_margin="10dp"
-                        android:id="@+id/cardFavoritos">
+                        android:layout_margin="10dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -163,7 +162,8 @@
                             <ImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@mipmap/favorito_menu">
+                                android:src="@mipmap/favorito_menu"
+                                android:id="@+id/cardFavoritos">
 
                             </ImageView>
                             <TextView
@@ -185,8 +185,7 @@
                         android:layout_rowWeight="1"
                         app:cardElevation="5dp"
                         app:cardCornerRadius="5dp"
-                        android:layout_margin="10dp"
-                        android:id="@+id/cardContactános">
+                        android:layout_margin="10dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -196,7 +195,8 @@
                             <ImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@mipmap/ruta_menu">
+                                android:src="@mipmap/ruta_menu"
+                                android:id="@+id/cardContactanos">
 
                             </ImageView>
                             <TextView
@@ -218,8 +218,7 @@
                         android:layout_rowWeight="1"
                         app:cardElevation="5dp"
                         app:cardCornerRadius="5dp"
-                        android:layout_margin="10dp"
-                        android:id="@+id/cardAyuda">
+                        android:layout_margin="10dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -229,7 +228,8 @@
                             <ImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@mipmap/ayuda_menu">
+                                android:src="@mipmap/ayuda_menu"
+                                android:id="@+id/cardAyuda">
 
                             </ImageView>
                             <TextView

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Views.Ui.Fragments.rutaFragment">
+    tools:context=".views.ui.Fragments.rutaFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:background="@color/fondo_tincho_background"
             android:id="@+id/actionbartoolbar"
-            app:menu="@menu/menu_navigation_bar"
+            app:menu="@menu/menu_navigation_toolbar"
             tools:ignore="MissingConstraints">
             <ImageView
                 android:id="@+id/fotoperfil"

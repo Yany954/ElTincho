@@ -1,4 +1,4 @@
-package com.example.eltincho.Views.Ui.Fragments
+package com.example.eltincho.views.ui.Fragments
 
 import android.os.Bundle
 import android.view.*
@@ -7,10 +7,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eltincho.R
-import com.example.eltincho.Views.Adapter.LibraryAdapter
+import com.example.eltincho.views.adapter.LibraryAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
+@Suppress("DEPRECATION")
 class comidaFragment : Fragment() {
     lateinit var recyclerEntrada:RecyclerView
     lateinit var firebaseAuth: FirebaseAuth
@@ -43,7 +46,7 @@ class comidaFragment : Fragment() {
             }
             R.id.cerrar->{
                 firebaseAuth.signOut()
-                findNavController().navigate(R.id.action_rutaFragment_to_activity_login)
+                findNavController().navigate(R.id.action_rutaFragment_to_loginActivity)
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -52,6 +55,7 @@ class comidaFragment : Fragment() {
     override  fun onCreate (savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
+        firebaseAuth= Firebase.auth
     }
     override fun onViewCreated(view:View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)

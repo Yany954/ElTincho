@@ -1,4 +1,4 @@
-package com.example.eltincho.Views.Adapter
+package com.example.eltincho.views.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +10,7 @@ import com.example.eltincho.R
 
 class LibraryAdapter:RecyclerView.Adapter<LibraryAdapter.ViewHolder>(){
     override fun onCreateViewHolder(viewGroup:ViewGroup, i:Int): ViewHolder {
-        var v=LayoutInflater.from(viewGroup.context).inflate(R.layout.card_view_entradas, viewGroup, false)
+        val v=LayoutInflater.from(viewGroup.context).inflate(R.layout.card_view_entradas, viewGroup, false)
         return ViewHolder(v)
     }
     inner class ViewHolder(ItemView: View): RecyclerView.ViewHolder(ItemView){

@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Views.Ui.Activities.HomeActivity"
-    android:background="@color/primaryTextColor"
+    tools:context=".views.ui.activities.HomeActivity"
+    android:background="#00BCD4"
     app:navGraph="@navigation/nav_grahn">
     <fragment
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/nav_host_fragment_container"
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -17,6 +17,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_grahn"></fragment>
+        app:navGraph="@navigation/nav_grahn"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

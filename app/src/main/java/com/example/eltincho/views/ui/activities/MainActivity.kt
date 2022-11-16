@@ -1,4 +1,4 @@
-package com.example.eltincho.Views.Ui.Activities
+package com.example.eltincho.views.ui.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

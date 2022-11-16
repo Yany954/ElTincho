@@ -1,5 +1,6 @@
-package com.example.eltincho.Views.Ui.Fragments
+package com.example.eltincho.views.ui.Fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,13 +11,14 @@ import androidx.navigation.fragment.findNavController
 import com.example.eltincho.R
 
 class menuFragment : Fragment() {
-
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ayuda, container, false)
+        val view= inflater.inflate(R.layout.fragment_menu, container, false)
+        return view
     }
     override fun onViewCreated(view:View,  savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
@@ -40,7 +42,7 @@ class menuFragment : Fragment() {
         cardPerfil.setOnClickListener(){
             findNavController().navigate(R.id.action_menuFragment_to_perfilFragment)
         }
-        val cardRutas=view.findViewById<ImageView>(R.id.cardContactános)
+        val cardRutas=view.findViewById<ImageView>(R.id.cardContactanos)
         cardRutas.setOnClickListener(){
             findNavController().navigate(R.id.action_menuFragment_to_rutaFragment)
         }
