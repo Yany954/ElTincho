@@ -3,23 +3,46 @@ package com.example.eltincho.views.ui.Fragments
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.eltincho.R
+import com.example.eltincho.models.favoritos
+import com.example.eltincho.viewModels.FavoritosViewModel
+import com.example.eltincho.views.adapter.FavoritosAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 
 @Suppress("DEPRECATION")
-class favoritosFragment : Fragment() {
+class favoritosFragment : Fragment(),FavoritosAdapter.OnDeseosItemClickLitener {
+    val data:FirebaseFirestore=FirebaseFirestore.getInstance()
+    lateinit var recyclerFav: RecyclerView
+    lateinit var adapter: FavoritosAdapter
+    private val viewModel by lazy { ViewModelProvider(this).get(FavoritosViewModel::class.java) }
     lateinit var firebaseAuth:FirebaseAuth
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favoritos, container, false)
+        val view= inflater.inflate(R.layout.fragment_favoritos, container, false)
+        recyclerFav=view.findViewById(R.id.recyclerviewfavoritos)
+        adapter= FavoritosAdapter(requireContext(),this)
+        recyclerFav.layoutManager=LinearLayoutManager(context)
+        recyclerFav.adapter=adapter
+        observeData()
+        return view
+    }
+    fun observeData(){
+        viewModel.fetchFavoritosData().observe(viewLifecycleOwner,{
+            adapter.setListData(it)
+            adapter.notifyDataSetChanged()
+        })
     }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_navigation_toolbar, menu)
@@ -61,5 +84,11 @@ class favoritosFragment : Fragment() {
 
             }
         }
+    }
+
+    override fun onItemClick(favorito: favoritos, position: Int) {
+        data.collection("favoritos")
+            .document(favorito.titulo)
+            .delete()
     }
 }

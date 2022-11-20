@@ -9,22 +9,30 @@ import android.widget.Toast
 import com.example.eltincho.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 
 class RegistroActivity : AppCompatActivity() {
     lateinit var buttonregistro: Button
     lateinit var buttonlogin: Button
-    lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var nombre:EditText
+    private lateinit var celular:EditText
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var dbReference: DatabaseReference
+    private lateinit var database:FirebaseDatabase
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
         firebaseAuth= Firebase.auth
+        database=FirebaseDatabase.getInstance()
+        dbReference=database.reference.child("Usuario")
         buttonregistro=findViewById(R.id.registro)
         buttonlogin=findViewById(R.id.loginRegistro)
-        val name=findViewById<EditText>(R.id.signUpName)
+        nombre=findViewById(R.id.signUpName)
         val correo=findViewById<EditText>(R.id.signUpEmail)
-        val celular=findViewById<EditText>(R.id.signUpPhone)
+        celular=findViewById(R.id.signUpPhone)
         val password=findViewById<EditText>(R.id.signUpPassword)
         buttonregistro.setOnClickListener{
             createUser(correo.text.toString(),password.text.toString())
@@ -35,18 +43,20 @@ class RegistroActivity : AppCompatActivity() {
 
     }
     private fun createUser(email:String, password:String) {
+        val name: String=nombre.text.toString()
+        val cel:String=celular.text.toString()
         firebaseAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) {
                     Task ->if (Task.isSuccessful) {
-                    startActivity(Intent(this, HomeActivity::class.java))
-                } else {
-                    Toast.makeText(
-                        applicationContext,
-                        "No se puede registrar este usuario",
-                        Toast.LENGTH_LONG
-                    ).show()
+                        val user=firebaseAuth.currentUser
+                        val userdb=dbReference.child(user?.uid.toString())
+                        userdb.child("name").setValue(name)
+                        userdb.child("cel").setValue(cel)
+                        startActivity(Intent(this, HomeActivity::class.java))
+                    } else {
+                        Toast.makeText(applicationContext,"No se puede registrar este usuario",Toast.LENGTH_LONG).show()
 
-                }
+                    }
             }
     }
 }

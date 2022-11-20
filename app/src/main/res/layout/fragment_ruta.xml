@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/ic_launcher_background">
+        android:background="@color/primaryColor">
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
         android:id="@+id/buttonNavigationMenu"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_marginTop="675dp"
+        android:layout_marginTop="65dp"
         android:background="@color/fondo_tincho3_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

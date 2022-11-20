@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_library"
+    android:id="@+id/card_favorito"
     android:layout_margin="12dp"
     app:cardBackgroundColor="@color/primaryLightColor"
     app:cardCornerRadius="20dp"
@@ -48,19 +48,9 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/agregar_fav"
+            android:src="@mipmap/drop_icon"
             android:layout_marginLeft="30dp"
             android:layout_toRightOf="@+id/title"
-            android:id="@+id/favoritosItem"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/agregar_cart"
-            android:layout_marginLeft="30dp"
-            android:layout_toRightOf="@+id/title"
-            android:layout_marginTop="50dp"
-            android:id="@+id/carritoItem"/>
-
+            android:id="@+id/eliminarItem"/>
     </RelativeLayout>
-
 </androidx.cardview.widget.CardView>
