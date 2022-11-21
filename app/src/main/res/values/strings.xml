@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">ElTincho</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Api_Map"
+        templateMergeStrategy="preserve"
+        translatable="false">
+        AIzaSyDmgjFl6N-xLCRa0sd9LXvBALugdPPw1zk
+    </string>
 </resources>
