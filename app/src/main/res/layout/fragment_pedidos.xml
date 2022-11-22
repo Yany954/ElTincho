@@ -11,33 +11,29 @@
         android:layout_height="match_parent"
         android:background="@color/primaryColor"
         android:orientation="vertical">
-
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/actionbartoolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/fondo_tincho_background"
+            android:id="@+id/actionbartoolbar"
             app:menu="@menu/menu_navigation_toolbar"
             tools:ignore="MissingConstraints">
-
             <ImageView
                 android:id="@+id/fotoperfil"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="left"
-                android:src="@drawable/icon_shop"
-                app:tint="@color/secondaryDarkColor" />
-
+                android:src="@drawable/icon_account"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:text="Pedidos"
+                android:text="Perfil"
+                android:textStyle="bold"
                 android:textSize="20dp"
-                android:textStyle="bold" />
-
+                android:layout_margin="10dp"/>
         </androidx.appcompat.widget.Toolbar>
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -68,64 +64,65 @@
                 android:text="Pedidos"
                 android:textColor="@color/secondaryDarkColor"
                 android:textSize="30sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
             <TextView
+                android:id="@+id/preciototal"
                 android:layout_width="208dp"
                 android:layout_height="55dp"
-                android:id="@+id/preciototal"
-                android:layout_marginTop="16dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/boton_favorito"
                 android:text="0"
                 android:textAlignment="center"
                 android:textColor="@color/primaryTextColor"
                 android:textIsSelectable="false"
-                android:textSize="30dp"/>
+                android:textSize="30dp" />
+
             <Button
                 android:id="@+id/botoncomprar"
                 android:layout_width="150dp"
                 android:layout_height="55dp"
                 android:layout_marginLeft="240dp"
                 android:layout_marginTop="16dp"
+                android:background="@drawable/stylo_borde_boton"
                 android:text="Comprar"
                 android:textAlignment="center"
-                android:background="@drawable/stylo_borde_boton"
                 android:textColor="@color/primaryTextColor"
                 android:textIsSelectable="false"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/recyclerviewcompras"
+            android:layout_width="match_parent"
+            android:layout_height="330dp"
             android:layout_marginTop="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/encabezado">
-        </androidx.recyclerview.widget.RecyclerView>
+            app:layout_constraintTop_toBottomOf="@id/encabezado"></androidx.recyclerview.widget.RecyclerView>
 
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/buttonNavigationMenu"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/fondo_tincho2_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:menu="@menu/menu_navigation_bar"
+            tools:ignore="MissingConstraints">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
     </LinearLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/buttonNavigationMenu"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="675dp"
-        android:background="@color/fondo_tincho2_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/menu_navigation_bar"
-        tools:ignore="MissingConstraints">
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
 </FrameLayout>

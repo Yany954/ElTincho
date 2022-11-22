@@ -6,7 +6,8 @@ import androidx.lifecycle.ViewModel
 import com.example.eltincho.domain.repository
 import com.example.eltincho.models.compras
 
-class ComprasViewModel(val repository: repository) :ViewModel() {
+class ComprasViewModel :ViewModel() {
+    val repository= repository()
     fun fetchComprasData():LiveData<MutableList<compras>>{
         val mutableData=MutableLiveData<MutableList<compras>>()
         repository.getDataComprasData().observeForever{

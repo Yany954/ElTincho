@@ -2,6 +2,7 @@ package com.example.eltincho.views.ui.Fragments
 
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.eltincho.R
@@ -39,6 +40,7 @@ class ayudaFragment : Fragment() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
     override  fun onCreate (savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
@@ -56,5 +58,6 @@ class ayudaFragment : Fragment() {
                 R.id.perfil->findNavController().navigate(R.id.action_ayudaFragment_to_perfilFragment)
             }
         }
+        (activity as AppCompatActivity).setSupportActionBar(view?.findViewById(R.id.actionbartoolbar))
     }
 }

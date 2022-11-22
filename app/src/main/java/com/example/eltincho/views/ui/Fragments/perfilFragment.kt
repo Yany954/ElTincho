@@ -15,12 +15,14 @@ import com.example.eltincho.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 
 
 @Suppress("DEPRECATION")
 class perfilFragment : Fragment() {
     lateinit var firebaseAuth:FirebaseAuth
+    val database:DatabaseReference= FirebaseDatabase.getInstance().getReference("user")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,6 +32,19 @@ class perfilFragment : Fragment() {
         val  nombreCompleto=view.findViewById<EditText>(R.id.nombrecompleto)
         val correoCompleto=view.findViewById<EditText>(R.id.correoelectronico)
         val celular=view.findViewById<EditText>(R.id.celularcompleto)
+        firebaseAuth= Firebase.auth
+        val user=firebaseAuth.currentUser
+        correoCompleto.setText(user?.email.toString())
+        database.child(user?.uid.toString()).addValueEventListener(object :ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                nombreCompleto.setText(snapshot.child("name").value.toString())
+                celular.setText(snapshot.child("celular").value.toString())
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
         val btneditnombre=view.findViewById<ImageButton>(R.id.nombreedit)
         val btneditcorrreo=view.findViewById<ImageButton>(R.id.correoedit)
         val btneditcelular=view.findViewById<ImageButton>(R.id.celularedit)
@@ -57,7 +72,7 @@ class perfilFragment : Fragment() {
                 celular.isEnabled=false
             }
         }
-        return inflater.inflate(R.layout.fragment_perfil, container, false)
+        return view
     }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_navigation_toolbar, menu)
@@ -85,7 +100,7 @@ class perfilFragment : Fragment() {
     override  fun onCreate (savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-        firebaseAuth= Firebase.auth
+
     }
     override fun onViewCreated(view:View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
@@ -98,7 +113,8 @@ class perfilFragment : Fragment() {
                 R.id.favoritos->findNavController().navigate(R.id.action_perfilFragment_to_favoritosFragment)
             }
         }
-        //(activity as AppCompatActivity).setSupportActionBar(view?.findViewById(R.id.actionbartoolbar))
+        (activity as AppCompatActivity).setSupportActionBar(view?.findViewById(R.id.actionbartoolbar))
+
         val btmcamara=view.findViewById<ImageButton>(R.id.btncamara)
         btmcamara.setOnClickListener{
             val intent=Intent(MediaStore.ACTION_IMAGE_CAPTURE)
@@ -110,6 +126,7 @@ class perfilFragment : Fragment() {
             intent.type="image/*"
             startActivityForResult(intent, 456)
         }
+
     }
     override fun onActivityResult(requestCode: Int, resultCode:Int, data: Intent?){
         super.onActivityResult(requestCode, resultCode, data)

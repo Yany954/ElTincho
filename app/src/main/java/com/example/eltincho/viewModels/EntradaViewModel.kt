@@ -6,7 +6,8 @@ import androidx.lifecycle.ViewModel
 import com.example.eltincho.domain.repository
 import com.example.eltincho.models.entradas
 
-class EntradaViewModel(val repository: repository) :ViewModel() {
+class EntradaViewModel :ViewModel() {
+    val repository= repository()
     fun fetchEntrada():LiveData<MutableList<entradas>>{
         val mutableData=MutableLiveData<MutableList<entradas>>()
         repository.getEntradasData().observeForever{

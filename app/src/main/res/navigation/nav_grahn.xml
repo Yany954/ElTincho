@@ -30,7 +30,7 @@
             app:destination="@id/perfilFragment" />
         <action
             android:id="@+id/action_favoritosFragment_to_loginActivity"
-            app:destination="@id/mainActivity" />
+            app:destination="@id/loginActivity" />
     </fragment>
     <fragment
         android:id="@+id/rutaFragment"
@@ -57,7 +57,7 @@
             app:destination="@id/pedidosFragment" />
         <action
             android:id="@+id/action_rutaFragment_to_loginActivity"
-            app:destination="@id/mainActivity" />
+            app:destination="@id/loginActivity" />
     </fragment>
     <fragment
         android:id="@+id/pedidosFragment"
@@ -84,7 +84,7 @@
             app:destination="@id/perfilFragment" />
         <action
             android:id="@+id/action_pedidosFragment_to_loginActivity"
-            app:destination="@id/mainActivity" />
+            app:destination="@id/loginActivity" />
     </fragment>
     <fragment
         android:id="@+id/perfilFragment"
@@ -111,7 +111,7 @@
             app:destination="@id/pedidosFragment" />
         <action
             android:id="@+id/action_perfilFragment_to_loginActivity"
-            app:destination="@id/mainActivity" />
+            app:destination="@id/loginActivity" />
     </fragment>
     <fragment
         android:id="@+id/ayudaFragment"
@@ -138,7 +138,7 @@
             app:destination="@id/menuFragment" />
         <action
             android:id="@+id/action_ayudaFragment_to_loginActivity"
-            app:destination="@id/mainActivity" />
+            app:destination="@id/loginActivity" />
     </fragment>
     <fragment
         android:id="@+id/comidaFragment"
@@ -165,7 +165,7 @@
             app:destination="@id/menuFragment" />
         <action
             android:id="@+id/action_comidaFragment_to_loginActivity"
-            app:destination="@id/mainActivity" />
+            app:destination="@id/loginActivity" />
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
@@ -193,8 +193,8 @@
 
     </fragment>
     <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.eltincho.views.ui.activities.MainActivity"
+        android:id="@+id/loginActivity"
+        android:name="com.example.eltincho.views.ui.activities.LoginActivity"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
 </navigation>

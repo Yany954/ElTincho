@@ -67,30 +67,30 @@
 
             </ImageView>
         </RelativeLayout>
+
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/recyclerviewfavoritos"
+            android:layout_width="match_parent"
+            android:layout_height="407dp"
             android:layout_marginTop="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/encabezado">
-        </androidx.recyclerview.widget.RecyclerView>
+            app:layout_constraintTop_toBottomOf="@id/encabezado"></androidx.recyclerview.widget.RecyclerView>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/buttonNavigationMenu"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/fondo_tincho_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:menu="@menu/menu_navigation_bar"
+            tools:ignore="MissingConstraints">
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
     </LinearLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/buttonNavigationMenu"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="675dp"
-        android:background="@color/fondo_tincho_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/menu_navigation_bar"
-        tools:ignore="MissingConstraints">
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
 </FrameLayout>

@@ -3,6 +3,7 @@ package com.example.eltincho.views.ui.Fragments
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -86,6 +87,7 @@ class comidaFragment : Fragment(), OnEntradaItemClickLitener {
                 R.id.favoritos->findNavController().navigate(R.id.action_comidaFragment_to_favoritosFragment)
             }
         }
+        (activity as AppCompatActivity).setSupportActionBar(view?.findViewById(R.id.actionbartoolbar))
 
     }
     override fun onItemClick(entrada: entradas,position: Int){

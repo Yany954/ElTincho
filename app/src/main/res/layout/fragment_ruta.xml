@@ -23,17 +23,15 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="left"
-                app:tint="@color/secondaryDarkColor"
                 android:src="@drawable/icon_account"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Contactános"
+                android:text="Ruta"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:layout_margin="10dp"/>
-
         </androidx.appcompat.widget.Toolbar>
         <RelativeLayout
             android:layout_width="match_parent"
@@ -41,8 +39,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:background="@drawable/theme_gradients_background"
-            >
+            android:background="@drawable/theme_gradients_background">
             <ImageView
                 android:layout_width="110dp"
                 android:layout_height="110dp"
@@ -65,32 +62,68 @@
                 android:layout_marginStart="9dp"
                 android:layout_marginEnd="81dp" />
         </RelativeLayout>
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:padding="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/secondaryLightColor"
+                android:text="El Tincho Parrilla Argentina Campestre"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+
+                android:text="Tabio. Vereda Rio Frio Oriental \n+57 319 312 01 10"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/secondaryLightColor"
+                android:text="Email"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+                android:text="eltinchoparrillargentina@gmail.com"/>
             <fragment
                 android:id="@+id/map_view"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
-                android:layout_height="661dp"
-                android:layout_marginTop="70dp">
+                android:layout_height="166dp"
+                android:layout_marginTop="0dp">
 
             </fragment>
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/buttonNavigationMenu"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/fondo_tincho3_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:menu="@menu/menu_navigation_bar"
+            tools:ignore="MissingConstraints">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     </LinearLayout>
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/buttonNavigationMenu"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="665dp"
-        android:background="@color/fondo_tincho3_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/menu_navigation_bar"
-        tools:ignore="MissingConstraints">
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
 </FrameLayout>

@@ -6,7 +6,8 @@ import androidx.lifecycle.ViewModel
 import com.example.eltincho.domain.repository
 import com.example.eltincho.models.favoritos
 
-class FavoritosViewModel(val repository: repository ):ViewModel() {
+class FavoritosViewModel:ViewModel() {
+    val repository= repository()
     fun fetchFavoritosData(): LiveData<MutableList<favoritos>> {
         val mutableData= MutableLiveData<MutableList<favoritos>>()
         repository.getDataFavoritosData().observeForever{

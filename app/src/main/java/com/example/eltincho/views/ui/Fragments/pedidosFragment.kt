@@ -5,6 +5,7 @@ import android.view.*
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -63,7 +64,7 @@ class pedidosFragment : Fragment(), OnCompraItemClickLitener {
                 val preciouni= mutableListOf<String>()
                 for(document in result){
                     val precio=document["precio"].toString()
-                    preciouni.add(precio!!)
+                    preciouni.add(precio)
                 }
                 val preciototal=preciouni.mapNotNull{it.toIntOrNull()}.sum()
                 precioT.setText(Integer.toString(preciototal))
@@ -98,6 +99,7 @@ class pedidosFragment : Fragment(), OnCompraItemClickLitener {
             }
             else -> super.onOptionsItemSelected(item)
         }
+
     }
     override  fun onCreate (savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
@@ -116,7 +118,7 @@ class pedidosFragment : Fragment(), OnCompraItemClickLitener {
                 R.id.contactanos->findNavController().navigate(R.id.action_pedidosFragment_to_rutaFragment)
             }
         }
-        //(activity as AppCompatActivity).setSupportActionBar(view?.findViewById(R.id.actionbartoolbar))
+        (activity as AppCompatActivity).setSupportActionBar(view?.findViewById(R.id.actionbartoolbar))
     }
 
     override fun onItemClick(compra: compras, position: Int) {

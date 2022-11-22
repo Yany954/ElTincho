@@ -27,7 +27,7 @@ class RegistroActivity : AppCompatActivity() {
         setContentView(R.layout.activity_registro)
         firebaseAuth= Firebase.auth
         database=FirebaseDatabase.getInstance()
-        dbReference=database.reference.child("Usuario")
+        dbReference=database.reference.child("User")
         buttonregistro=findViewById(R.id.registro)
         buttonlogin=findViewById(R.id.loginRegistro)
         nombre=findViewById(R.id.signUpName)
@@ -51,7 +51,7 @@ class RegistroActivity : AppCompatActivity() {
                         val user=firebaseAuth.currentUser
                         val userdb=dbReference.child(user?.uid.toString())
                         userdb.child("name").setValue(name)
-                        userdb.child("cel").setValue(cel)
+                        userdb.child("celular").setValue(cel)
                         startActivity(Intent(this, HomeActivity::class.java))
                     } else {
                         Toast.makeText(applicationContext,"No se puede registrar este usuario",Toast.LENGTH_LONG).show()

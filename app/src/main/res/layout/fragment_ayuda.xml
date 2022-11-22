@@ -18,22 +18,20 @@
             android:id="@+id/actionbartoolbar"
             app:menu="@menu/menu_navigation_toolbar"
             tools:ignore="MissingConstraints">
-            <ImageView
-                android:id="@+id/fotoperfil"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="left"
-                app:tint="@color/secondaryDarkColor"
-                android:src="@drawable/icon_help"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Ayuda"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:layout_margin="10dp"/>
-
+        <ImageView
+            android:id="@+id/fotoperfil"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="left"
+            android:src="@drawable/icon_account"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Ayuda"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_margin="10dp"/>
         </androidx.appcompat.widget.Toolbar>
         <RelativeLayout
             android:layout_width="match_parent"
@@ -64,18 +62,18 @@
                 android:layout_marginStart="9dp"
                 android:layout_marginEnd="81dp" />
         </RelativeLayout>
-    </LinearLayout>
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/buttonNavigationMenu"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="675dp"
-        android:background="@color/fondo_tincho_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/menu_navigation_bar"
-        tools:ignore="MissingConstraints">
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/buttonNavigationMenu"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="400dp"
+            android:background="@color/fondo_tincho_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:menu="@menu/menu_navigation_bar"
+            tools:ignore="MissingConstraints">
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </LinearLayout>
 </FrameLayout>
