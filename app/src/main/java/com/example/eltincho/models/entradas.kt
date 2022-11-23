@@ -1,7 +1,7 @@
 package com.example.eltincho.models
 
 data class entradas(
-    val title:String,
-    val price:String,
+    val titulo:String,
+    val precio:String,
     val imagen:String?
 )

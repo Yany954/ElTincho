@@ -6,12 +6,14 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eltincho.R
 import com.example.eltincho.models.entradas
+import android.content.Context
 import com.squareup.picasso.Picasso
 
-class EntradaAdapter(private val context: android.content.Context, var clickLitener: OnEntradaItemClickLitener):RecyclerView.Adapter<EntradaAdapter.ViewHolder>(){
+class EntradaAdapter(private val context: Context, var clickLitener: OnEntradaItemClickLitener):RecyclerView.Adapter<EntradaAdapter.ViewHolder>(){
     private var entradaslist= mutableListOf<entradas>()
     //funcion que actualiza la base de datos
     fun setListData(data:MutableList<entradas>){
@@ -32,8 +34,8 @@ class EntradaAdapter(private val context: android.content.Context, var clickLite
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         fun binWew(entrada: entradas, action:OnEntradaItemClickLitener){
             Picasso.with(context).load(entrada.imagen).into(itemView.findViewById<ImageView>(R.id.image))
-            itemView.findViewById<TextView>(R.id.title).text=entrada.title
-            itemView.findViewById<TextView>(R.id.precio).text= entrada.price
+            itemView.findViewById<TextView>(R.id.title).text=entrada.titulo
+            itemView.findViewById<TextView>(R.id.precio).text= entrada.precio
             val btncarrito=itemView.findViewById<ImageButton>(R.id.carritoItem)
             val btnfavorito=itemView.findViewById<ImageButton>(R.id.favoritosItem)
             btncarrito.setOnClickListener{

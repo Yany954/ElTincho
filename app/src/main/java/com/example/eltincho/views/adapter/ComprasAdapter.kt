@@ -1,20 +1,25 @@
 package com.example.eltincho.views.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eltincho.R
 import com.example.eltincho.models.compras
 import com.squareup.picasso.Picasso
 
-class ComprasAdapter(private val context: android.content.Context, var clickListenerComprasAdapter: OnCompraItemClickLitener):RecyclerView.Adapter<ComprasAdapter.ViewHolder>() {
+class ComprasAdapter(private val context: Context, var clickListenerComprasAdapter: OnCompraItemClickLitener):RecyclerView.Adapter<ComprasAdapter.ViewHolder>() {
     private var compraslist= mutableListOf<compras>()
     //funcion que actualiza la base de datos
     fun setListData(data:MutableList<compras>){
+        if(compraslist.size<1){
+            Toast.makeText(context,"Error en compras", Toast.LENGTH_LONG).show()
+        }
         compraslist=data
     }
     override fun onCreateViewHolder(viewGroup: ViewGroup, i:Int): ViewHolder {
@@ -34,7 +39,7 @@ class ComprasAdapter(private val context: android.content.Context, var clickList
             Picasso.with(context).load(compra.image).into(itemView.findViewById<ImageView>(R.id.image))
             itemView.findViewById<TextView>(R.id.title).text=compra.titulo
             itemView.findViewById<TextView>(R.id.precio).text= compra.precio
-            val btneliminar=itemView.findViewById<ImageButton>(R.id.eliminar)
+            val btneliminar=itemView.findViewById<ImageButton>(R.id.eliminarShop)
             btneliminar.setOnClickListener{
                 action.onItemClick(compra,adapterPosition)
             }

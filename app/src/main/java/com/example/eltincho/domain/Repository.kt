@@ -1,13 +1,15 @@
 package com.example.eltincho.domain
 
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.eltincho.models.compras
 import com.example.eltincho.models.entradas
 import com.example.eltincho.models.favoritos
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlin.coroutines.coroutineContext
 
-class repository {
+class Repository {
     fun getEntradasData():LiveData<MutableList<entradas>>{
         val mutableLiveData=MutableLiveData<MutableList<entradas>>()
         //accedemos a la coleccion
@@ -15,16 +17,17 @@ class repository {
             result -> val listData = mutableListOf<entradas>()
             for (document in result){
                 //recorremos los libros
-                val title=document.getString("title")
+                val titulo=document.getString("titulo")
                 val precio=document.getString("precio")
                 val imagen = document.getString("imagen")
                 //no acepta nulos !!
                 //acepta nulos ??
-                val entrada=entradas(title!!,precio!!,imagen)
+                val entrada=entradas(titulo!!,precio!!,imagen)
                 //almacenamos en esta lista
                 listData.add(entrada)
             }
             mutableLiveData.value=listData
+
         }
         //retorna la coleccion de entradas
         return mutableLiveData
@@ -36,10 +39,10 @@ class repository {
                 result->
                 val listData= mutableListOf<compras>()
                 for(document in result){
-                    val title=document.getString("title")
+                    val titulo=document.getString("titulo")
                     val precio=document.getString("precio")
                     val imagen = document.getString("imagen")
-                    val compra=compras(title!!,precio!!,imagen)
+                    val compra=compras(titulo!!,precio!!,imagen)
                     listData.add(compra)
                 }
                 mutableData.value=listData
@@ -53,10 +56,10 @@ class repository {
                     result->
                 val listData= mutableListOf<favoritos>()
                 for(document in result){
-                    val title=document.getString("title")
+                    val titulo=document.getString("titulo")
                     val precio=document.getString("precio")
                     val imagen = document.getString("imagen")
-                    val favorito=favoritos(title!!,precio!!,imagen)
+                    val favorito=favoritos(titulo!!,precio!!,imagen)
                     listData.add(favorito)
                 }
                 mutableData.value=listData

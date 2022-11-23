@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    android:gravity="center"
+    android:layout_gravity="center"
     android:background="@color/primaryColor"
 
     tools:context=".views.ui.activities.LoginActivity">
@@ -14,8 +14,9 @@
     <ImageView
         android:layout_width="276dp"
         android:layout_height="150dp"
-        android:scaleType="fitXY"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
+        android:scaleType="fitXY"
         app:srcCompat="@mipmap/ic_banner_foreground_tincho" />
 
     <LinearLayout
@@ -97,15 +98,6 @@
             android:text="TEST"
             android:textColor="#000000"
             android:textSize="18dp" />
-        <Button
-            android:id="@+id/Signin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:layout_marginTop="70dp"
-            android:text="Google Sign In"
-            android:textColor="#000"
-            android:textSize="22sp" />
     </RelativeLayout>
 
 
@@ -120,20 +112,19 @@
 
         <TextView
             android:id="@+id/BotonRecuperar"
-            android:layout_width="188dp"
+            android:layout_width="142dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_margin="10dp"
             android:fontFamily="sans-serif-black"
             android:text=" Recuperar constraseña"
             android:textColor="@color/secondaryColor"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/BotonRegistroLogin"
             android:layout_width="151dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-black"
             android:paddingLeft="40dp"

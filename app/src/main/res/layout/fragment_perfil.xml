@@ -23,15 +23,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="left"
-                android:src="@drawable/icon_account"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Perfil"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:layout_margin="10dp"/>
+                android:src="@mipmap/el_tincho_round"/>
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -69,7 +61,7 @@
 
         <ScrollView
             android:layout_width="wrap_content"
-            android:layout_height="212dp"
+            android:layout_height="278dp"
             android:layout_gravity="center">
 
             <LinearLayout
@@ -103,9 +95,8 @@
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/stylo_borde_editext"
-                        android:editable="false"
                         android:inputType="none"
-                        android:text="Pablo Marmol"
+                        android:text="Nombre"
                         android:textIsSelectable="false" />
 
                     <ImageButton
@@ -143,7 +134,7 @@
                         android:background="@drawable/stylo_borde_editext"
                         android:fontFamily="sans-serif-light"
                         android:inputType="none"
-                        android:text="pablomarmol@gmail.com"
+                        android:text="ejemplo@gmail.com"
                         android:textIsSelectable="false" />
 
                     <ImageButton

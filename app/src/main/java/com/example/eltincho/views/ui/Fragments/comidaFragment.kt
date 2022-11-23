@@ -91,14 +91,16 @@ class comidaFragment : Fragment(), OnEntradaItemClickLitener {
 
     }
     override fun onItemClick(entrada: entradas,position: Int){
-        val titulo:String=entrada.title
-        val precio:String=entrada.price
+        val titulo:String=entrada.titulo
+        val precio:String=entrada.precio
         val image:String?=entrada.imagen
         val dato= hashMapOf(
-            "title" to titulo,
-            "price" to precio,
+            "titulo" to titulo,
+            "precio" to precio,
             "imagen" to image
         )
+
+        //aqui deberia ubicar que usuario esta comprando y le añado items al carrito a ese usuario
         database.collection("compras")
             .document(titulo)
             .set(dato)
@@ -108,12 +110,12 @@ class comidaFragment : Fragment(), OnEntradaItemClickLitener {
     }
 
     override fun onDeseosClick(entrada: entradas, position: Int) {
-        val titulo:String=entrada.title
-        val precio:String=entrada.price
+        val titulo:String=entrada.titulo
+        val precio:String=entrada.precio
         val image:String?=entrada.imagen
         val dato= hashMapOf(
-            "title" to titulo,
-            "price" to precio,
+            "titulo" to titulo,
+            "precio" to precio,
             "imagen" to image
         )
         database.collection("favoritos")

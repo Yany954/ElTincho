@@ -22,7 +22,7 @@ import com.google.firebase.ktx.Firebase
 @Suppress("DEPRECATION")
 class perfilFragment : Fragment() {
     lateinit var firebaseAuth:FirebaseAuth
-    val database:DatabaseReference= FirebaseDatabase.getInstance().getReference("user")
+    val database:DatabaseReference= FirebaseDatabase.getInstance().getReference("User")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,6 +33,9 @@ class perfilFragment : Fragment() {
         val correoCompleto=view.findViewById<EditText>(R.id.correoelectronico)
         val celular=view.findViewById<EditText>(R.id.celularcompleto)
         firebaseAuth= Firebase.auth
+
+
+        //traigo info de la base de datos y la pongo en los edit text
         val user=firebaseAuth.currentUser
         correoCompleto.setText(user?.email.toString())
         database.child(user?.uid.toString()).addValueEventListener(object :ValueEventListener{
@@ -48,6 +51,7 @@ class perfilFragment : Fragment() {
         val btneditnombre=view.findViewById<ImageButton>(R.id.nombreedit)
         val btneditcorrreo=view.findViewById<ImageButton>(R.id.correoedit)
         val btneditcelular=view.findViewById<ImageButton>(R.id.celularedit)
+
         nombreCompleto.isEnabled=false
         correoCompleto.isEnabled=false
         celular.isEnabled=false
@@ -132,6 +136,7 @@ class perfilFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         val imageView=view?.findViewById<ImageView>(R.id.fotoperfil)
         val imageView2=view?.findViewById<ImageView>(R.id.fotoperfilgeneral)
+        //camara
         if(requestCode==123){
             var bitmap=data?.extras?.get("data") as Bitmap
             imageView?.setImageBitmap(bitmap)

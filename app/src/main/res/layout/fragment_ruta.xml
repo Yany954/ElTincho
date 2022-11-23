@@ -23,15 +23,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="left"
-                android:src="@drawable/icon_account"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Ruta"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:layout_margin="10dp"/>
+                android:src="@mipmap/el_tincho_round"/>
         </androidx.appcompat.widget.Toolbar>
         <RelativeLayout
             android:layout_width="match_parent"
@@ -100,11 +92,27 @@
                 android:textColor="@color/primaryTextColor"
                 android:textStyle="bold"
                 android:text="eltinchoparrillargentina@gmail.com"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/secondaryLightColor"
+                android:text="Mas información"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/primaryTextColor"
+                android:textStyle="bold"
+                android:text="https://goo.gl/maps/RJSGkT1iKoMXeXXA9"/>
             <fragment
                 android:id="@+id/map_view"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
-                android:layout_height="166dp"
+                android:layout_height="200dp"
                 android:layout_marginTop="0dp">
 
             </fragment>
@@ -114,7 +122,7 @@
             android:id="@+id/buttonNavigationMenu"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="150dp"
             android:background="@color/fondo_tincho3_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
