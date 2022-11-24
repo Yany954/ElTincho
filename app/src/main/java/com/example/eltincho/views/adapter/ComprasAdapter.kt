@@ -36,7 +36,7 @@ class ComprasAdapter(private val context: Context, var clickListenerComprasAdapt
     }
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         fun binWew(compra: compras, action:OnCompraItemClickLitener){
-            Picasso.with(context).load(compra.image).into(itemView.findViewById<ImageView>(R.id.image))
+            Picasso.with(context).load(compra.imagen).into(itemView.findViewById<ImageView>(R.id.image))
             itemView.findViewById<TextView>(R.id.title).text=compra.titulo
             itemView.findViewById<TextView>(R.id.precio).text= compra.precio
             val btneliminar=itemView.findViewById<ImageButton>(R.id.eliminarShop)

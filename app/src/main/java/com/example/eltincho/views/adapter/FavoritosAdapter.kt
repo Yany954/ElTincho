@@ -36,7 +36,7 @@ class FavoritosAdapter(private val context: Context, var clickListenerDeseosAdap
     }
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         fun binWew(favorito: favoritos, action:OnDeseosItemClickLitener){
-            Picasso.with(context).load(favorito.image).into(itemView.findViewById<ImageView>(R.id.image))
+            Picasso.with(context).load(favorito.imagen).into(itemView.findViewById<ImageView>(R.id.image))
             itemView.findViewById<TextView>(R.id.title).text=favorito.titulo
             itemView.findViewById<TextView>(R.id.precio).text= favorito.precio
             val btneliminar=itemView.findViewById<ImageButton>(R.id.eliminarFav)
