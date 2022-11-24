@@ -122,7 +122,7 @@ class comidaFragment : Fragment(), OnEntradaItemClickLitener {
             .document(titulo)
             .set(dato)
             .addOnSuccessListener {
-                Toast.makeText(context,"Entrada añadida al carrito",Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,"Entrada añadida al favoritos",Toast.LENGTH_SHORT).show()
             }
     }
 

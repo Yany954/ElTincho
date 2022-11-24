@@ -34,46 +34,53 @@
             android:layout_alignParentTop="true"
             android:textSize="18sp"
             android:id="@+id/title"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_toRightOf="@id/image"
             android:text="$"
             android:textColor="@color/primaryTextColor"
-            android:textStyle="bold"
-            android:layout_toEndOf="@id/image"
-            android:layout_toRightOf="@id/image"
-            android:layout_below="@+id/title"
-            android:textSize="17sp"/>
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
         <TextView
+            android:id="@+id/precio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:layout_toRightOf="@id/image"
             android:text="Precio"
             android:textColor="@color/primaryTextColor"
-            android:textStyle="bold"
-            android:id="@+id/precio"
-            android:layout_marginLeft="15dp"
-            android:layout_toEndOf="@id/image"
-            android:layout_toRightOf="@id/image"
-            android:layout_below="@+id/title"
-            android:textSize="17dp"/>
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
         <ImageButton
+            android:id="@+id/favoritosItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/agregar_fav"
+            android:layout_below="@id/precio"
+            android:layout_alignParentEnd="true"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginEnd="16dp"
             android:layout_toRightOf="@+id/carritoItem"
             android:background="@color/primaryLightColor"
-            android:id="@+id/favoritosItem"/>
+            android:src="@mipmap/agregar_fav" />
+
         <ImageButton
+            android:id="@+id/carritoItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/agregar_cart"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginLeft="122dp"
+            android:layout_below="@id/precio"
+            android:layout_toEndOf="@+id/precio"
             android:layout_toRightOf="@+id/image"
             android:background="@color/primaryLightColor"
-            android:layout_marginTop="50dp"
-            android:id="@+id/carritoItem"/>
+            android:src="@mipmap/agregar_cart" />
 
     </RelativeLayout>
 

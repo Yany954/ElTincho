@@ -92,5 +92,6 @@ class favoritosFragment : Fragment(),FavoritosAdapter.OnDeseosItemClickLitener {
         data.collection("favoritos")
             .document(favorito.titulo)
             .delete()
+        observeData()
     }
 }

@@ -17,9 +17,6 @@ class FavoritosAdapter(private val context: Context, var clickListenerDeseosAdap
     private var favoritoslist= mutableListOf<favoritos>()
     //funcion que actualiza la base de datos
     fun setListData(data:MutableList<favoritos>){
-        if(favoritoslist.size<1){
-            Toast.makeText(context,"No has agregado nada a tu lista de favoritos", Toast.LENGTH_LONG).show()
-        }
         favoritoslist=data
     }
     override fun onCreateViewHolder(viewGroup: ViewGroup, i:Int): ViewHolder {

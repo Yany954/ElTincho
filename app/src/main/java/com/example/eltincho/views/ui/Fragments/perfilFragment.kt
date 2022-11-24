@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.eltincho.R
+import com.example.eltincho.views.ui.activities.HomeActivity
+import com.example.eltincho.views.ui.activities.LoginActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -95,7 +97,9 @@ class perfilFragment : Fragment() {
             }
             R.id.cerrar->{
                 firebaseAuth.signOut()
-                findNavController().navigate(R.id.action_rutaFragment_to_loginActivity)
+                //findNavController().navigate(R.id.action_rutaFragment_to_loginActivity)
+                val intent= Intent(activity, LoginActivity::class.java)
+                startActivity (intent)
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -134,15 +138,15 @@ class perfilFragment : Fragment() {
     }
     override fun onActivityResult(requestCode: Int, resultCode:Int, data: Intent?){
         super.onActivityResult(requestCode, resultCode, data)
-        val imageView=view?.findViewById<ImageView>(R.id.fotoperfil)
+        //val imageView=view?.findViewById<ImageView>(R.id.fotoperfil)
         val imageView2=view?.findViewById<ImageView>(R.id.fotoperfilgeneral)
         //camara
         if(requestCode==123){
             var bitmap=data?.extras?.get("data") as Bitmap
-            imageView?.setImageBitmap(bitmap)
+            //imageView?.setImageBitmap(bitmap)
             imageView2?.setImageBitmap(bitmap)
         } else if (requestCode==456){
-            imageView?.setImageURI(data?.data)
+            //imageView?.setImageURI(data?.data)
             imageView2?.setImageURI(data?.data)
         }
     }

@@ -57,6 +57,7 @@ class pedidosFragment : Fragment(), OnCompraItemClickLitener {
         })
     }
     private fun preciototal(){
+        observeData()
         db.collection("compras")
             .get()
             .addOnSuccessListener {
@@ -125,5 +126,6 @@ class pedidosFragment : Fragment(), OnCompraItemClickLitener {
         db.collection("compras")
             .document(compra.titulo)
             .delete()
+        observeData()
     }
 }

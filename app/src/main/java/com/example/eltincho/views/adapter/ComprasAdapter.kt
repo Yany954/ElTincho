@@ -17,9 +17,6 @@ class ComprasAdapter(private val context: Context, var clickListenerComprasAdapt
     private var compraslist= mutableListOf<compras>()
     //funcion que actualiza la base de datos
     fun setListData(data:MutableList<compras>){
-        if(compraslist.size<1){
-            Toast.makeText(context,"Error en compras", Toast.LENGTH_LONG).show()
-        }
         compraslist=data
     }
     override fun onCreateViewHolder(viewGroup: ViewGroup, i:Int): ViewHolder {
